@@ -53,7 +53,6 @@ pipeline{
             steps{
                 script{
                     withDockerRegistry(credentialsId: 'docker-creds', toolName: 'docker'){
-                        sh "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
                         sh "docker build -t food-App ."
                         sh "docker tag food-App gunjan04/food-App:latest "
                         sh "docker push gunjan04/food-App:latest "
