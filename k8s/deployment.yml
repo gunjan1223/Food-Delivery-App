@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: food-app
+  lables: 
+    app: food-app
+  spec:
+    replicas: 2
+    selector:
+      matchLables:
+        app: food-app
+    template: 
+      metadata:
+        lables:
+          app: food-app
+      spec:
+        containers:
+        - name: food-app
+          image: gunjan04/food-app:latest
+          ports:
+          - containerPort: 3000
+   
