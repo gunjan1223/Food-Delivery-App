@@ -53,21 +53,21 @@ pipeline{
             steps{
                 script{
                     withDockerRegistry(credentialsId: 'docker-creds', toolName: 'docker'){
-                        sh "docker build -t food-App ."
-                        sh "docker tag food-App gunjan04/food-App:latest "
-                        sh "docker push gunjan04/food-App:latest "
+                        sh "docker build -t food-app ."
+                        sh "docker tag food-app gunjan04/food-app:latest "
+                        sh "docker push gunjan04/food-app:latest "
                     }
                 }
             }
         }
         stage("Trivy"){
             steps{
-                sh "trivy image gunjan04/food-App:latest > trivy.txt"
+                sh "trivy image gunjan04/food-app:latest > trivy.txt"
             }
         }
         stage('Deploy to Container'){
             steps{
-                sh 'docker run -d --name food-App -p 3000:3000 gunjan04/food-App:latest'
+                sh 'docker run -d --name food-app -p 3000:3000 gunjan04/food-app:latest'
             }
         }
     }
