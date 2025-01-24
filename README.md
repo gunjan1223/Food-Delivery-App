@@ -4,11 +4,10 @@ In this DevOps project, I demonstrate how to deploy a Food-Delivery-app Clone us
 
 # 🛠️ Tools & Services Used:
 1. Docker
-2. K8s
-3. GitHub
-4. OWASP
-5. Trivy
-6. Sonarqube
-7. Jenkins
+2. GitHub
+3. OWASP
+4. Trivy
+5. Sonarqube
+6. Jenkins
 
 
